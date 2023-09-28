@@ -1,13 +1,15 @@
 <?php
 
 $text = "The brown fox jumps over the lazy dog";
-$small = strtolower($text);
 
-function manipulate($small){
-    $result = str_replace("brown", "red", $small);
-    echo $result;
+function manipulate(&$text){
+    $lower = strtolower($text); 
+    $text = str_replace("brown", "red", $lower);
+    return $text;
 }
-manipulate($small)
 
+manipulate($text);
+
+print_r($text);
 
 ?>
